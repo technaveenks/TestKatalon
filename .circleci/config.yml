@@ -14,7 +14,7 @@ orbs:
 #          command: echo ${BROWSER}
 workflows:
   build:
-    jobs:
+    steps:
       - run:
           name: "Enter Browser Type"
           command_arguments: ${BROWSER_TYPE}
