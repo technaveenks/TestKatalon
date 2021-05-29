@@ -7,10 +7,9 @@ orbs:
   katalon-studio: katalon/katalon-studio@23.0.11
 # Orchestrate or schedule a set of jobs
 jobs:
-  steps:
-    - run:
-        name: "Enter Browser Type"
-        command: echo ${BROWSER}
+  - run:
+      name: "Enter Browser Type"
+      command: echo ${BROWSER}
 workflows:
   build:     
     jobs:
