@@ -20,8 +20,8 @@ jobs:
       - image: cimg/base:stable
     steps:
       - browser:
-          to: $BROWSER
-      
+          to: ${BROWSER}
+           
 workflows:
   #build:
   sample-workflow:
