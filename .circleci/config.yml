@@ -13,16 +13,15 @@ orbs:
 #          name: "Enter Browser Type"
 #          command: echo ${BROWSER}
 workflows:
-  build:
-    steps:
-      - run:
-          name: "Enter Browser Type"
-          command_arguments: ${BROWSER_TYPE}
-          
+  build:     
     jobs:
-      - katalon-studio/run:
-          version: latest
-          command_arguments:  -retry=0 -testSuitePath="Test Suites/Verify Operations" -executionProfile="default" -browserType="Chrome" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true
+      steps:
+        - run:
+            name: "Enter Browser Type"
+            command_arguments: ${BROWSER_TYPE}
+        - katalon-studio/run:
+            version: latest
+           command_arguments:  -retry=0 -testSuitePath="Test Suites/Verify Operations" -executionProfile="default" -browserType="Chrome" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true
    #jobs:
     #  - katalon-studio/run:
     #      version: latest
