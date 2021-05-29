@@ -15,7 +15,7 @@ orbs:
 workflows:
   build:
     jobs:
-      -run:
+      - run:
           name: "Enter Browser Type:"
           command_arguments: echo ${BROWSER}
       - katalon-studio/run:
