@@ -18,7 +18,7 @@ workflows:
       - katalon-studio/run:
           version: latest
           name: "Enter Browser Type:"
-          command: echo ${BROWSER}
+          command_arguments: echo ${BROWSER}
           command_arguments:  -retry=0 -testSuitePath="Test Suites/Verify Operations" -executionProfile="default" -browserType=$BROWSER --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true
    #jobs:
     #  - katalon-studio/run:
