@@ -6,19 +6,22 @@ orbs:
   #welcome: circleci/welcome-orb@0.4.1
   katalon-studio: katalon/katalon-studio@23.0.11
 # Orchestrate or schedule a set of jobs
-workflows:
+jobs:
   build:
-    #jobs:
-    #  - katalon-studio/run:
-    #      version: latest
-    #      command_arguments:  -retry=0 -testSuitePath="Test Suites/Verify Operations" -executionProfile="default" -browserType="Chrome" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true
     steps:
       - run:
           name: "Enter Browser Type"
           command: echo ${BROWSER}
-      
-      - run:
-          command: -retry=0 -testSuitePath="Test Suites/Verify Operations" -executionProfile="default" -browserType=$BROWSER --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true
+workflows:
+  build:
+    jobs:
+      - katalon-studio/run:
+          version: latest
+          command_arguments:  -retry=0 -testSuitePath="Test Suites/Verify Operations" -executionProfile="default" -browserType=$BROWSER --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true
+   #jobs:
+    #  - katalon-studio/run:
+    #      version: latest
+    #      command_arguments:  -retry=0 -testSuitePath="Test Suites/Verify Operations" -executionProfile="default" -browserType="Chrome" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true
 #  healthcheck:
 #    triggers:
 #      - schedule:
