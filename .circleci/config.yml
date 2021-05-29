@@ -13,9 +13,17 @@ commands:
         default: "Chrome"
         type: string
     steps:
-      - run: echo "Hello <<${browser}>>"
+      - run: echo "Hello <<parameters.to>>"
+jobs:
+  sample-job:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - browser:
+          to: $BROWSER
 workflows:
-  build:
+  #build:
+  sample-job:
     jobs:
       - katalon-studio/run:
           version: latest
