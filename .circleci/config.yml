@@ -21,10 +21,12 @@ jobs:
     steps:
       - browser:
           to: $BROWSER
+      
 workflows:
   #build:
-  sample-job:
+  sample-workflow:
     jobs:
+      - sample-job
       - katalon-studio/run:
           version: latest
           command_arguments:  -retry=0 -testSuitePath="Test Suites/Verify Operations" -executionProfile="default" -browserType="Chrome" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true
