@@ -17,7 +17,7 @@ workflows:
     jobs:
       - katalon-studio/run:
           version: latest
-          command_arguments:  -retry=0 -testSuitePath="Test Suites/Verify Operations" -executionProfile="default" -browserType="chrome" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true
+          command_arguments:  -retry=0 -testSuitePath="Test Suites/Verify Operations" -executionProfile="default" -browserType="Chrome" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true
    #jobs:
     #  - katalon-studio/run:
     #      version: latest
